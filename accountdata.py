@@ -26,14 +26,14 @@ class BankAccount:
         try:
             self.Transactionable(amount)
             self.balance -= amount
-            print(f'\n withdraw comepleted')
+            print(f'\n withdraw completed')
             self.get_Balance()
         except BalanceException as error:
             print(f'withdraw interrupted.{error}')
 
     def transfer(self, amount, account):
         try:
-            print(f"\n**********\n\nBegining Transfer")
+            print(f"\n**********\n\nBeginning Transfer")
             self.Transactionable(amount)
             self.withdraw(amount)
             account.deposit(amount)
