@@ -1,8 +1,6 @@
 from accountdata import *
 Naim=BankAccount(10000, 'Naim')
-Akhi=BankAccount(20000,'Naim Wife')
-Naim.get_Balance()
-Akhi.get_Balance()
+Akhi=BankAccount(20000,'Akhi')
 Naim.deposit(5000)
 Naim.withdraw(20000)
 Naim.withdraw(10)

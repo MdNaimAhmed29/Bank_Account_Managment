@@ -9,7 +9,7 @@ class BankAccount:
         print(f'Account holder name:{self.name} created .\nBalance={self.balance:.2f}')
 
     def get_Balance(self):
-        print(f"Account holder name:{self.name} created .\nBalance={self.balance:.2f}")
+        print(f"\nBalance={self.balance:.2f}")
 
     def deposit(self, amount):
         self.balance += amount
@@ -20,16 +20,16 @@ class BankAccount:
         if self.balance >= amount:
             return
         else:
-            raise BalanceException(f"Sorry,account {self.name} has balance of{self.balance:.2f}")
+            raise BalanceException(f"\nSorry,account {self.name} has balance of{self.balance:.2f}")
 
     def withdraw(self, amount):
         try:
             self.Transactionable(amount)
             self.balance -= amount
-            print(f'\n withdraw completed')
+            print(f'\nwithdraw completed')
             self.get_Balance()
         except BalanceException as error:
-            print(f'withdraw interrupted.{error}')
+            print(f'\nwithdraw interrupted.{error}')
 
     def transfer(self, amount, account):
         try:
@@ -38,8 +38,9 @@ class BankAccount:
             self.withdraw(amount)
             account.deposit(amount)
             print(f'Transfer complete')
+            self.get_Balance()
         except BalanceException as error:
-            print(f'\nTransfer interupted{error}')
+            print(f'\nTransfer interrupted{error}')
 
 
 class Interest(BankAccount):
